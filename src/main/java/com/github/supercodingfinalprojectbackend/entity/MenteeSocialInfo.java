@@ -16,7 +16,7 @@ public class MenteeSocialInfo extends CommonEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "mentee_social_info_id")
     private Long menteeSocialId;
-
+//    asd
     @ManyToOne
     @JoinColumn(name = "mentee_id")
     private Mentee mentee;
