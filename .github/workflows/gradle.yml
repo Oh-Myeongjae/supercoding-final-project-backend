@@ -78,7 +78,7 @@ jobs:
         run: |
           aws deploy create-deployment \
           --application-name codevelop \
-          --deployment-group-name codevelop \
+          --deployment-group-name codevelop_deploy \
           --file-exists-behavior OVERWRITE \
           --s3-location bucket=codevelop,bundleType=zip,key=codevelop.zip \
           --region ap-northeast-2
