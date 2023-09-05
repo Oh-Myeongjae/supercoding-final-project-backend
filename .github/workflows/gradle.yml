@@ -69,3 +69,16 @@ jobs:
           --region ap-northeast-2 \
           --acl private \
           ./codevelop.zip s3://codevelop/
+
+      # Deploy
+      - name: Deploy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws deploy create-deployment \
+          --application-name codevelop \
+          --deployment-group-name codevelop \
+          --file-exists-behavior OVERWRITE \
+          --s3-location bucket=codevelop,bundleType=zip,key=codevelop.zip \
+          --region ap-northeast-2
