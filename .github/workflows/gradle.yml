@@ -26,6 +26,8 @@ jobs:
   build:
     # 실행 환경 지정
     runs-on: ubuntu-latest
+    env:
+      SECRET_KEY_SOURCE : ${{ secrets.SECRET_KEY_SOURCE }}
 
     # Task의 sequence를 명시한다.
     steps:
@@ -36,12 +38,12 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: Generate Environment Variables File for Properties
-        uses: microsoft/variable-substitution@v1
-        with:
-          files: ${{ env.RESOURCE_PATH }}
-        env:
-          SECRET_KEY_SOURCE : ${{ secrets.SECRET_KEY_SOURCE }}
+#      - name: Generate Environment Variables File for Properties
+#        uses: microsoft/variable-substitution@v1
+#        with:
+#          files: ${{ env.RESOURCE_PATH }}
+#        env:
+#          SECRET_KEY_SOURCE : ${{ secrets.SECRET_KEY_SOURCE }}
 
 
         #빌드를 하기 위한 권한 부여
