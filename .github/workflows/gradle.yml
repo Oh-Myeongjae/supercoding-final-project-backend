@@ -21,7 +21,7 @@ permissions:
 
 env:
   RESOURCE_PATH: ./src/main/resources/application.yml
-
+  SECRET_KEY_SOURCE: ${{ secrets.SECRET_KEY_SOURCE }}
 
 jobs:
   build:
