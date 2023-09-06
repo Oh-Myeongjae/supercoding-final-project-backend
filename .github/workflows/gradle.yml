@@ -12,7 +12,8 @@ name: Java CI with Gradle
 # master branch에 push 또는 pull request가 발생할 경우 동작
 on:
   push:
-    branches: [ "feature/gitAction" ]
+#    branches: [ "feature/gitAction" ]
+    branches: [ "test" ]
 #  pull_request:
 #    branches: [ "main" ]
 
