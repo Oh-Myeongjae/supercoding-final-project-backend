@@ -21,4 +21,9 @@ public class UserController {
         System.out.println(code);
         return oauth2Service.kakaoLogin(code);
     }
+
+    @GetMapping("/test")
+    public String test(){
+        return "성공";
+    }
 }
